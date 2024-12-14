@@ -15,7 +15,6 @@ tot = 0
 while True:
     for j2,(b,s,idx) in reversed(list(enumerate(blocks))):
         if (b,s,idx) not in orig_blocks: continue
-        print(idx)
         orig_blocks.remove((b,s,idx))
         for j,((b1,s1,_),(b2,s2,_)) in enumerate(zip(blocks[:-1],blocks[1:])):
             if j >= j2: break
@@ -27,11 +26,8 @@ while True:
         break
     else: break
 
-# print(blocks)
 tot = 0
 for b,s,idx in blocks:
     for pos in range(s,s+b):
         tot += pos*idx
 print(tot)
-
-# 7118460412627 too high
